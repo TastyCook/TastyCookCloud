@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/TastyCook/TastyCookCloud.git
-    targetRevision: integrate-argocd
+    targetRevision: HEAD
     path: microservices
     directory:
       recurse: true
