@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: recipes-api-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50M
+  storageClassName: default
+  selector:
+    matchLabels:
+      name: recipes-api-pv

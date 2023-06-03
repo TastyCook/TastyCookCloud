@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipes-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: recipes-api
+  template:
+    metadata:
+      labels:
+        app: recipes-api
+    spec:
+      containers:
+        - name: recipes-api
+          image: tastycook.azurecr.io/recipes-api:v0.1.2
+          ports:
+            - containerPort: 80
+        - name: rabbitmq
+          image: rabbitmq:management
+          volumeMounts:
+            - name: rabbitmq-data
+              mountPath: /var/lib/rabbitmq
+      volumes:
+        - name: rabbitmq-data
+          persistentVolumeClaim:
+            claimName: recipes-api-pvc
