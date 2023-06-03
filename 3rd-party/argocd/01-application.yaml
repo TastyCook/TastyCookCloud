@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tastycook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/TastyCook/TastyCookCloud.git
+    targetRevision: HEAD
+    path: microservices
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tastycook
+  syncPolicy:
+    automated: { }
