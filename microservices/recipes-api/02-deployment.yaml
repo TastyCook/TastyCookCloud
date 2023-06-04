@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: recipes-api
-          image: tastycook.azurecr.io/recipes-api:1685829987
+          image: tastycook.azurecr.io/recipes-api:1685880744
           ports:
             - containerPort: 80
         - name: rabbitmq
