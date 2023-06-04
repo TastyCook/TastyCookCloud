@@ -17,9 +17,9 @@ spec:
           image: rabbitmq:management
           ports:
             - containerPort: 15672
-              name: rabbitmq-mgmt-port
+              name: rabmq-mgmt-port
             - containerPort: 5672
-              name: rabbitmq-msg-port
+              name: rabmq-msg-port
           volumeMounts:
             - name: rabbitmq-data
               mountPath: /var/lib/rabbitmq
