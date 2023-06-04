@@ -17,14 +17,3 @@ spec:
           image: tastycook.azurecr.io/recipes-api:1685887638
           ports:
             - containerPort: 80
-        - name: rabbitmq
-          image: rabbitmq:management
-          ports:
-            - containerPort: 15672
-          volumeMounts:
-            - name: rabbitmq-data
-              mountPath: /var/lib/rabbitmq
-      volumes:
-        - name: rabbitmq-data
-          persistentVolumeClaim:
-            claimName: recipes-api-pvc

@@ -8,8 +8,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      name: users-api
-    - protocol: TCP
-      port: 15672
-      name: rabbitmq
   type: ClusterIP
