@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recipes-api
+  namespace: tastycook
 spec:
   replicas: 1
   selector:
@@ -19,6 +20,8 @@ spec:
             - containerPort: 80
         - name: rabbitmq
           image: rabbitmq:management
+          ports:
+            - containerPort: 15672
           volumeMounts:
             - name: rabbitmq-data
               mountPath: /var/lib/rabbitmq
