@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recipes-api
-  namespace: tastycook
 spec:
   replicas: 1
   selector:
