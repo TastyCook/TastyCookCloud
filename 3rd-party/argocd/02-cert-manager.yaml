@@ -21,3 +21,10 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+  # This solves a bug where argo-cd will mark the application as healthy but OutOfSync
+  ignoreDifferences:
+      - group: admissionregistration.k8s.io
+        kind: ValidatingWebhookConfiguration
+        name: cert-manager-webhook
+        jqPathExpressions:
+          - .webhooks[].namespaceSelector.matchExpressions[] | select(.key == "control-plane")
