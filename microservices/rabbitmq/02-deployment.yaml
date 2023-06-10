@@ -4,6 +4,7 @@ metadata:
   name: rabbitmq
 spec:
   replicas: 1
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: rabbitmq
@@ -12,7 +13,6 @@ spec:
       labels:
         app: rabbitmq
     spec:
-      revisionHistoryLimit: 2
       containers:
         - name: rabbitmq
           image: rabbitmq:management

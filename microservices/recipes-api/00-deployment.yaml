@@ -4,6 +4,7 @@ metadata:
   name: recipes-api
 spec:
   replicas: 1
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: recipes-api
@@ -12,7 +13,6 @@ spec:
       labels:
         app: recipes-api
     spec:
-      revisionHistoryLimit: 2
       containers:
         - name: recipes-api
           image: tastycook.azurecr.io/recipes-api:be018a9
