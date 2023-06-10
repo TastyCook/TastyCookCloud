@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tastycook-api
+  namespace: tastycook
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - back.tastycook.live
+      secretName: tastycook-tls
+  rules:
+    - host: back.tastycook.live
+      http:
+        paths:
+          - path: /recipes(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: recipes-api
+                port:
+                  number: 80
+          - path: /users(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: users-api
+                port:
+                  number: 80
