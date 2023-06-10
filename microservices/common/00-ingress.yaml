@@ -30,3 +30,10 @@ spec:
                 name: users-api
                 port:
                   number: 80
+          - path: /products(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: products-api
+                port:
+                  number: 80
