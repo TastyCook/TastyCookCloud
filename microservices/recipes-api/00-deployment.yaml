@@ -15,6 +15,6 @@ spec:
       revisionHistoryLimit: 2
       containers:
         - name: recipes-api
-          image: tastycook.azurecr.io/recipes-api:392cb37
+          image: tastycook.azurecr.io/recipes-api:be018a9
           ports:
             - containerPort: 80
