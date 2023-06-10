@@ -12,6 +12,7 @@ spec:
       labels:
         app: rabbitmq
     spec:
+      revisionHistoryLimit: 2
       containers:
         - name: rabbitmq
           image: rabbitmq:management

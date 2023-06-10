@@ -12,6 +12,7 @@ spec:
       labels:
         app: products-api
     spec:
+      revisionHistoryLimit: 2
       containers:
         - name: products-api
           image: tastycook.azurecr.io/products-api:c380c04

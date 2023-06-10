@@ -12,6 +12,7 @@ spec:
       labels:
         app: recipes-api
     spec:
+      revisionHistoryLimit: 2
       containers:
         - name: recipes-api
           image: tastycook.azurecr.io/recipes-api:392cb37
