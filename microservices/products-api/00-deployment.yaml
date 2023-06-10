@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: users-api
+  name: products-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: users-api
+      app: products-api
   template:
     metadata:
       labels:
-        app: users-api
+        app: products-api
     spec:
       containers:
-        - name: users-api
-          image: tastycook.azurecr.io/users-api:392cb37
+        - name: products-api
+          image: tastycook.azurecr.io/products-api:c380c04
           ports:
             - containerPort: 80
