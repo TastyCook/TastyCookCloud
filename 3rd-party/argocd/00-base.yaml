@@ -16742,6 +16742,8 @@ metadata:
     app.kubernetes.io/part-of: argocd
   name: argocd-cm
   namespace: argocd
+data:
+  users.anonymous.enabled: "true"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -16779,6 +16781,8 @@ metadata:
     app.kubernetes.io/part-of: argocd
   name: argocd-rbac-cm
   namespace: argocd
+data:
+  policy.default: "role:readonly"
 ---
 apiVersion: v1
 data:
