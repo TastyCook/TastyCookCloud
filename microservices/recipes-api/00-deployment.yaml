@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: recipes-api
-          image: tastycook.azurecr.io/recipes-api:cb364ff
+          image: tastycook.azurecr.io/recipes-api:58fcd0d
           ports:
             - containerPort: 80
